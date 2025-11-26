@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses | NextGen Aerospace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-current-page="courses">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-img">NG</div>
+        <div class="logo-text">NextGen Aerospace</div>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="index.html"
+              class="nav-link"
+              data-page="home"
+              data-local="true"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="nav-link"
+              data-page="about"
+              data-local="true"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="nyota.html"
+              class="nav-link"
+              data-page="nyota"
+              data-local="true"
+              >Nyota Junior</a
+            >
+          </li>
+          <li>
+            <a
+              href="sayari.html"
+              class="nav-link"
+              data-page="sayari"
+              data-local="true"
+              >Sayari Pro</a
+            >
+          </li>
+          <li>
+            <a
+              href="orbit.html"
+              class="nav-link"
+              data-page="orbit"
+              data-local="true"
+              >Orbit Lady</a
+            >
+          </li>
+          <li>
+            <a
+              href="courses.html"
+              class="nav-link"
+              data-page="courses"
+              data-local="true"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a
+              href="research.html"
+              class="nav-link"
+              data-page="research"
+              data-local="true"
+              >Research Lab</a
+            >
+          </li>
+          <li>
+            <a
+              href="media.html"
+              class="nav-link"
+              data-page="media"
+              data-local="true"
+              >Media Hub</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="sw">SW</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </header>
+    <!-- Accessibility Dock -->
+    <section class="accessibility-dock" aria-label="Accessibility controls">
+      <div class="dock-info">
+        <strong>Accessibility tools</strong>
+        <p>Adjust text size, toggle visual modes, or listen to any page without leaving the site.</p>
+      </div>
+      <div class="dock-groups">
+        <div class="dock-group">
+          <span class="dock-label">Text size</span>
+          <div class="font-controls" id="font-controls">
+            <button class="font-btn" data-size="small" aria-label="Reduce text size">A-</button>
+            <button class="font-btn" data-size="normal" aria-label="Reset text size">A</button>
+            <button class="font-btn" data-size="large" aria-label="Increase text size">A+</button>
+          </div>
+        </div>
+        <div class="dock-group">
+          <span class="dock-label">Visual &amp; audio</span>
+          <div class="dock-buttons">
+            <button
+              class="accessibility-btn"
+              id="contrast-btn"
+              title="High Contrast Mode"
+            >
+              Contrast
+            </button>
+            <button
+              class="accessibility-btn"
+              id="dyslexia-btn"
+              title="Dyslexia-Friendly Font"
+            >
+              Dyslexia
+            </button>
+            <button class="accessibility-btn" id="tts-btn" title="Text-to-Speech">
+              Listen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Courses Section -->
+      <section id="courses" class="page active">
+        <div class="section-intro">
+          <h1>Courses for All Levels</h1>
+          <p>
+            Curated pathways that cover playful Nyota Junior missions, advanced
+            Sayari Pro certification tracks, and Orbit Lady leadership journeys.
+            Choose a lane or mix-and-match modules to build your personalized
+            stack.
+          </p>
+        </div>
+
+        <div class="course-filters">
+          <button class="filter-btn active" data-filter="all">
+            All Courses
+          </button>
+          <button class="filter-btn" data-filter="kids">Nyota Junior</button>
+          <button class="filter-btn" data-filter="pro">Sayari Pro</button>
+          <button class="filter-btn" data-filter="women">Orbit Lady</button>
+          <button class="filter-btn" data-filter="research">
+            Research Lab
+          </button>
+        </div>
+
+        <div class="course-grid">
+          <div class="course-card" data-category="kids">
+            <div class="course-image">🚀</div>
+            <div class="course-content">
+              <h3>Space Exploration for Kids</h3>
+              <p>
+                Fun introduction to planets, stars, and space travel for young
+                explorers.
+              </p>
+              <button class="course-btn">Enroll Now</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="kids">
+            <div class="course-image">🧪</div>
+            <div class="course-content">
+              <h3>Zero-Gravity Science Lab</h3>
+              <p>
+                Hands-on experiments that translate classroom chemistry and
+                physics into space-friendly formats.
+              </p>
+              <button class="course-btn">Download Kit</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="pro">
+            <div class="course-image">🛰️</div>
+            <div class="course-content">
+              <h3>Satellite Systems Engineering</h3>
+              <p>
+                Comprehensive course on satellite design, operation, and data
+                analysis.
+              </p>
+              <button class="course-btn">Enroll Now</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="pro">
+            <div class="course-image">✈️</div>
+            <div class="course-content">
+              <h3>Propulsion &amp; Launch Fundamentals</h3>
+              <p>
+                Learn propulsion physics, engine typologies, and launch campaign
+                planning.
+              </p>
+              <button class="course-btn">View Syllabus</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="women">
+            <div class="course-image">👩‍💻</div>
+            <div class="course-content">
+              <h3>Women in Aerospace Leadership</h3>
+              <p>
+                Developing leadership skills and career strategies for women in
+                aerospace.
+              </p>
+              <button class="course-btn">Apply</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="women">
+            <div class="course-image">🎙️</div>
+            <div class="course-content">
+              <h3>Policy &amp; Advocacy Studio</h3>
+              <p>
+                Craft policy briefs and media campaigns championing women in
+                STEM.
+              </p>
+              <button class="course-btn">Reserve Seat</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="research">
+            <div class="course-image">🔍</div>
+            <div class="course-content">
+              <h3>Space Data Ops Residency</h3>
+              <p>
+                Live projects using Sentinel, Landsat, and CubeSat datasets.
+              </p>
+              <button class="course-btn">Start Residency</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="pro">
+            <div class="course-image">🤖</div>
+            <div class="course-content">
+              <h3>AI for Space Applications</h3>
+              <p>
+                Applying artificial intelligence to satellite data analysis and
+                mission planning.
+              </p>
+              <button class="course-btn">Join Sprint</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Learning Formats</h3>
+            <ul>
+              <li>Live cohort-based classes</li>
+              <li>Self-paced nano modules</li>
+              <li>Weekend design sprints</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Assessment Model</h3>
+            <ul>
+              <li>Project rubrics &amp; code reviews</li>
+              <li>Industry mentor feedback</li>
+              <li>Open badge credentials</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Support Layer</h3>
+            <ul>
+              <li>Office hours twice weekly</li>
+              <li>Scholarships &amp; device lending</li>
+              <li>Career concierge services</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card">
+            <h3>Micro-Credential Stack</h3>
+            <ul>
+              <li>Satellite Payload Designer</li>
+              <li>Space Mission Data Analyst</li>
+              <li>STEM Storytelling Facilitator</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Tools &amp; Platforms</h3>
+            <ul>
+              <li>CAD + simulation sandbox</li>
+              <li>Code playground with autograder</li>
+              <li>AI tutor with multilingual prompts</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Community Perks</h3>
+            <ul>
+              <li>Project showcase gallery</li>
+              <li>Peer mentorship pods</li>
+              <li>Access to internship board</li>
+            </ul>
+          </article>
+        </div>
+
+        <table class="resource-table">
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Level</th>
+              <th>Start Date</th>
+              <th>Seats</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nyota Arcade Makers</td>
+              <td>Kids / Beginner</td>
+              <td>Jan, Apr, Aug</td>
+              <td>25 per cohort</td>
+            </tr>
+            <tr>
+              <td>Sayari Orbital Systems</td>
+              <td>Professional / Advanced</td>
+              <td>Feb &amp; Sep</td>
+              <td>40 fellows</td>
+            </tr>
+            <tr>
+              <td>Orbit Leadership Residency</td>
+              <td>Women / Intermediate</td>
+              <td>May &amp; Nov</td>
+              <td>30 residents</td>
+            </tr>
+            <tr>
+              <td>Research Lab Practicum</td>
+              <td>Graduate / Expert</td>
+              <td>Rolling</td>
+              <td>Mentor-matched</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cta-banner">
+          <h3>Need a custom learning path for your school or company?</h3>
+          <p>
+            We white-label curricula, train facilitators, and deploy hardware
+            kits within four weeks.
+          </p>
+          <button>Design a Custom Program</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant">
+      <div class="ai-chat" id="ai-chat">
+        <div class="chat-header">
+          <span>Ask NextGen Assistant</span>
+          <button id="close-chat">X</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+          <div class="chat-message ai-message">
+            Hello! I'm your NextGen AI assistant. How can I help you today?
+          </div>
+        </div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your question..."
+          />
+          <button id="send-message">Send</button>
+        </div>
+      </div>
+      <div class="ai-bubble" id="ai-bubble">
+        <span>🤖</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="index.html" data-page="home" data-local="true">Home</a>
+          <a href="about.html" data-page="about" data-local="true">About Us</a>
+          <a href="nyota.html" data-page="nyota" data-local="true"
+            >Nyota Junior</a
+          >
+          <a href="sayari.html" data-page="sayari" data-local="true"
+            >Sayari Pro</a
+          >
+          <a href="orbit.html" data-page="orbit" data-local="true"
+            >Orbit Lady</a
+          >
+          <a href="courses.html" data-page="courses" data-local="true"
+            >Courses</a
+          >
+          <a href="research.html" data-page="research" data-local="true"
+            >Research Lab</a
+          >
+          <a href="media.html" data-page="media" data-local="true">Media Hub</a>
+          <a href="#">Get Involved</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="language-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="sw">SW</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <p>&copy; 2023 NextGen Aerospace Technologies. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

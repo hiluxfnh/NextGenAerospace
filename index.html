@@ -9,7 +9,7 @@
     </title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-current-page="home">
     <!-- Header -->
     <header>
       <div class="logo">
@@ -19,20 +19,78 @@
 
       <nav>
         <ul>
-          <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-          <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
           <li>
-            <a href="#" class="nav-link" data-page="nyota">Nyota Junior</a>
+            <a
+              href="index.html"
+              class="nav-link"
+              data-page="home"
+              data-local="true"
+              >Home</a
+            >
           </li>
           <li>
-            <a href="#" class="nav-link" data-page="sayari">Sayari Pro</a>
+            <a
+              href="about.html"
+              class="nav-link"
+              data-page="about"
+              data-local="true"
+              >About Us</a
+            >
           </li>
-          <li><a href="#" class="nav-link" data-page="orbit">Orbit Lady</a></li>
-          <li><a href="#" class="nav-link" data-page="courses">Courses</a></li>
           <li>
-            <a href="#" class="nav-link" data-page="research">Research Lab</a>
+            <a
+              href="nyota.html"
+              class="nav-link"
+              data-page="nyota"
+              data-local="true"
+              >Nyota Junior</a
+            >
           </li>
-          <li><a href="#" class="nav-link" data-page="media">Media Hub</a></li>
+          <li>
+            <a
+              href="sayari.html"
+              class="nav-link"
+              data-page="sayari"
+              data-local="true"
+              >Sayari Pro</a
+            >
+          </li>
+          <li>
+            <a
+              href="orbit.html"
+              class="nav-link"
+              data-page="orbit"
+              data-local="true"
+              >Orbit Lady</a
+            >
+          </li>
+          <li>
+            <a
+              href="courses.html"
+              class="nav-link"
+              data-page="courses"
+              data-local="true"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a
+              href="research.html"
+              class="nav-link"
+              data-page="research"
+              data-local="true"
+              >Research Lab</a
+            >
+          </li>
+          <li>
+            <a
+              href="media.html"
+              class="nav-link"
+              data-page="media"
+              data-local="true"
+              >Media Hub</a
+            >
+          </li>
         </ul>
       </nav>
 
@@ -42,42 +100,47 @@
           <button class="lang-btn" data-lang="sw">SW</button>
           <button class="lang-btn" data-lang="fr">FR</button>
         </div>
-
-        <div class="accessibility-tools">
-          <button
-            class="accessibility-btn"
-            id="font-control-btn"
-            title="Font Controls"
-          >
-            A
-          </button>
-          <button
-            class="accessibility-btn"
-            id="contrast-btn"
-            title="High Contrast Mode"
-          >
-            C
-          </button>
-          <button
-            class="accessibility-btn"
-            id="dyslexia-btn"
-            title="Dyslexia-Friendly Font"
-          >
-            D
-          </button>
-          <button class="accessibility-btn" id="tts-btn" title="Text-to-Speech">
-            TTS
-          </button>
-        </div>
       </div>
     </header>
-
-    <!-- Font Controls -->
-    <div class="font-controls" id="font-controls">
-      <button class="font-btn" data-size="small">A-</button>
-      <button class="font-btn" data-size="normal">A</button>
-      <button class="font-btn" data-size="large">A+</button>
-    </div>
+    <!-- Accessibility Dock -->
+    <section class="accessibility-dock" aria-label="Accessibility controls">
+      <div class="dock-info">
+        <strong>Accessibility tools</strong>
+        <p>Adjust text size, toggle visual modes, or listen to any page without leaving the site.</p>
+      </div>
+      <div class="dock-groups">
+        <div class="dock-group">
+          <span class="dock-label">Text size</span>
+          <div class="font-controls" id="font-controls">
+            <button class="font-btn" data-size="small" aria-label="Reduce text size">A-</button>
+            <button class="font-btn" data-size="normal" aria-label="Reset text size">A</button>
+            <button class="font-btn" data-size="large" aria-label="Increase text size">A+</button>
+          </div>
+        </div>
+        <div class="dock-group">
+          <span class="dock-label">Visual &amp; audio</span>
+          <div class="dock-buttons">
+            <button
+              class="accessibility-btn"
+              id="contrast-btn"
+              title="High Contrast Mode"
+            >
+              Contrast
+            </button>
+            <button
+              class="accessibility-btn"
+              id="dyslexia-btn"
+              title="Dyslexia-Friendly Font"
+            >
+              Dyslexia
+            </button>
+            <button class="accessibility-btn" id="tts-btn" title="Text-to-Speech">
+              Listen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Main Content -->
     <main>
@@ -125,242 +188,689 @@
           </div>
         </div>
 
-        <div class="impact-counter">
-          <div class="counter-item">
-            <div class="counter-number" id="kids-counter">0</div>
-            <div class="counter-label">Kids Reached</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-number" id="courses-counter">0</div>
-            <div class="counter-label">Courses Developed</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-number" id="women-counter">0</div>
-            <div class="counter-label">Women Mentored</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-number" id="countries-counter">0</div>
-            <div class="counter-label">Countries Impacted</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-number" id="community-counter">0</div>
-            <div class="counter-label">Community Members</div>
-          </div>
-        </div>
       </section>
 
       <!-- About Us Page -->
       <section id="about" class="page">
-        <h1>About NextGen Aerospace Technologies</h1>
-        <p>
-          We are building talent pipelines for space systems, satellites,
-          aerospace engineering, AI, and emerging space technologies across
-          Africa.
-        </p>
-
-        <div class="content-section">
-          <h2>Our Vision</h2>
+        <div class="section-intro">
+          <h1>About NextGen Aerospace Technologies</h1>
           <p>
-            "To position Africa as a leader in space and aerospace innovation by
-            empowering children, youth, and women through education and
-            technology."
+            NextGen Aerospace Technologies was formed in 2025 in Dar es Salaam,
+            Tanzania, by Eglah and a small team of educators, engineers, and
+            storytellers. We are in our pilot phase, building simple but
+            powerful learning experiences that introduce Tanzanian children and
+            youth to the possibilities of aerospace.
           </p>
-
-          <h2>Our Mission</h2>
-          <ul>
-            <li>Educate</li>
-            <li>Inspire</li>
-            <li>Innovate</li>
-            <li>Empower</li>
-            <li>Build Capacity</li>
-          </ul>
-
-          <h2>Our Values</h2>
-          <div class="values-grid">
-            <div class="value-item">Inclusivity</div>
-            <div class="value-item">Innovation</div>
-            <div class="value-item">Excellence</div>
-            <div class="value-item">Sustainability</div>
-            <div class="value-item">Collaboration</div>
+          <div class="pill-list">
+            <span class="pill">Founded 2025</span>
+            <span class="pill">Dar es Salaam</span>
+            <span class="pill">Led by Eglah &amp; team</span>
+            <span class="pill">Pilot programs in motion</span>
           </div>
+        </div>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Mission</h3>
+            <p>
+              Lower the barrier to aerospace literacy for Tanzanian learners
+              through hands-on projects, playful media, and community mentors.
+            </p>
+            <ul>
+              <li>Prototype maker kits using locally available materials.</li>
+              <li>Blend offline-first lessons with simple digital tools.</li>
+              <li>Invite families and teachers into every design sprint.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>What We're Building</h3>
+            <p>
+              Our immediate focus is to launch the first Nyota Junior learning
+              lab, document everything we learn, and translate that into
+              playbooks for other Tanzanian and East African classrooms.
+            </p>
+            <ul>
+              <li>Weekend discovery camps for ages 7-14.</li>
+              <li>Facilitator toolkits co-created with local teachers.</li>
+              <li>
+                Pathways that point curious teens to mentors and internships.
+              </li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Guiding Values</h3>
+            <div class="pill-list">
+              <span class="pill">Honesty</span>
+              <span class="pill">Care</span>
+              <span class="pill">Curiosity</span>
+              <span class="pill">Community</span>
+            </div>
+            <p>
+              We build at a pace we can sustain, share real updates, and keep
+              learners' safety and joy at the center.
+            </p>
+          </article>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Jan 2025 - Formation</h4>
+            <p>
+              Eglah rallies a founding crew in Dar es Salaam and scopes the
+              first pilot roadmap.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>Apr 2025 - Co-Design</h4>
+            <p>
+              We run listening sessions with teachers, parents, and students to
+              shape the Nyota Junior experience.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>Aug 2025 - Pilot Launch</h4>
+            <p>
+              First weekend lab scheduled with partner schools in Tanzania to
+              validate our kits and facilitation model.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>2026 - Grow Carefully</h4>
+            <p>
+              Document lessons, publish open resources, and explore a second
+              site once the first hub is stable.
+            </p>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <article class="stat-card">
+            <strong>2025</strong>
+            <p>
+              The year NextGen Aerospace officially came to life under Eglah's
+              leadership.
+            </p>
+          </article>
+          <article class="stat-card">
+            <strong>Tanzania</strong>
+            <p>
+              Our work is rooted in Dar es Salaam and the surrounding
+              communities we serve first.
+            </p>
+          </article>
+          <article class="stat-card">
+            <strong>Pilot Team</strong>
+            <p>
+              A close-knit crew coordinating curriculum, partnerships, and
+              learner support in one room.
+            </p>
+          </article>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card">
+            <h3>Core Team</h3>
+            <ul>
+              <li>Eglah steers strategy and partnerships.</li>
+              <li>Educators translate aerospace ideas into playful lessons.</li>
+              <li>Volunteers help test kits and document feedback.</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>How We Work</h3>
+            <ul>
+              <li>Start local, prove value, then share openly.</li>
+              <li>Budget transparently so supporters know where funds go.</li>
+              <li>
+                Invite learners to critique and co-create every iteration.
+              </li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Support We Need</h3>
+            <ul>
+              <li>Maker space access and simple fabrication tools.</li>
+              <li>Mentors who can guest-facilitate or review curricula.</li>
+              <li>Seed funding for scholarships and logistics.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="badge-collection">
+          <span class="badge">Built in Tanzania</span>
+          <span class="badge">Teacher-led design</span>
+          <span class="badge">Learner safety first</span>
+          <span class="badge">Open resources</span>
+        </div>
+
+        <div class="cta-banner">
+          <h3>Want to help us run the first pilots?</h3>
+          <p>
+            Reach out if you can mentor, supply materials, or co-host a session
+            in Tanzania.
+          </p>
+          <button>Get In Touch</button>
         </div>
       </section>
 
       <!-- Nyota Junior Page -->
       <section id="nyota" class="page">
-        <h1>Nyota Junior 🌟 Kids Space Academy</h1>
-        <p>
-          Introducing children ages 5-14 to the wonders of space through games,
-          stories, coding simulations, and DIY experiments.
-        </p>
+        <div class="section-intro">
+          <h1>Nyota Junior 🌟 Kids Space Academy</h1>
+          <p>
+            Introducing children ages 5-14 to the wonders of space through
+            games, storytelling, code-play labs, and weekend build challenges.
+            Nyota Junior blends STEAM fundamentals with African space stories so
+            that every child can see themselves in orbit.
+          </p>
+        </div>
 
-        <div class="course-grid">
-          <div class="course-card">
-            <div class="course-image">🔧</div>
-            <div class="course-content">
-              <h3>DIY Space Activities</h3>
-              <p>
-                Build paper satellites, balloon rocket launchers, and Mars
-                rovers with step-by-step guides.
-              </p>
-              <button class="course-btn">Explore Activities</button>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Stargazers (Ages 5-7)</h3>
+            <p>
+              Colorful planet hunts, constellation yoga, tactile maker kits, and
+              bilingual story-time adventures.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Planet Bingo</span>
+              <span class="pill">Moon Sand Lab</span>
+              <span class="pill">Story Rockets</span>
             </div>
-          </div>
-          <div class="course-card">
-            <div class="course-image">💻</div>
-            <div class="course-content">
-              <h3>Junior Coding & Simulation Games</h3>
-              <p>
-                Drag-and-drop orbit simulations and rocket building games with
-                AI tutor support.
-              </p>
-              <button class="course-btn">Start Playing</button>
+          </article>
+          <article class="detail-card">
+            <h3>Rocket Coders (Ages 8-10)</h3>
+            <p>
+              Block-based coding quests, aerodynamics challenges, and
+              collaborative puzzles that teach real physics.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Orbit Dash</span>
+              <span class="pill">Sensor Safari</span>
+              <span class="pill">Drone Sketch</span>
             </div>
-          </div>
-          <div class="course-card">
-            <div class="course-image">📚</div>
-            <div class="course-content">
-              <h3>Interactive Space Stories</h3>
-              <p>
-                Multilingual space storybooks with audio versions and
-                personalized features.
-              </p>
-              <button class="course-btn">Read Stories</button>
+          </article>
+          <article class="detail-card">
+            <h3>Mission Scientists (Ages 11-14)</h3>
+            <p>
+              Python mini-labs, satellite data journals, design sprints, and
+              leadership missions with African mentors.
+            </p>
+            <div class="pill-list">
+              <span class="pill">CubeSat Studio</span>
+              <span class="pill">Mars Garden</span>
+              <span class="pill">AeroPitch</span>
             </div>
+          </article>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card">
+            <h3>Game Library 🎮</h3>
+            <ul>
+              <li>
+                <strong>Comet Catcher:</strong> physics arcade that rewards
+                reaction and prediction.
+              </li>
+              <li>
+                <strong>Build-a-Bot:</strong> assemble rovers from African found
+                materials.
+              </li>
+              <li>
+                <strong>Orbit Orchestra:</strong> music sequencer that teaches
+                orbital periods.
+              </li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Maker Lab 🔧</h3>
+            <ul>
+              <li>Printable mission cards with 3 difficulty tiers.</li>
+              <li>
+                Low-cost materials lists plus recycling tips for each build.
+              </li>
+              <li>
+                Safety walkthrough videos recorded in Swahili, English, and
+                French.
+              </li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Story Studio 📚</h3>
+            <ul>
+              <li>
+                Animated folktales featuring Kenyan, Ghanaian, and South African
+                space pioneers.
+              </li>
+              <li>
+                Interactive choose-your-own-mission storybooks with audio
+                narration.
+              </li>
+              <li>
+                Downloadable educator guides that map stories to curriculum
+                outcomes.
+              </li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Aerospace Club 👥</h3>
+            <ul>
+              <li>Monthly challenges judged by volunteer engineers.</li>
+              <li>Earn digital star badges and unlock surprise loot boxes.</li>
+              <li>
+                Regional meetups that pair classrooms for live experiments.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="list-grid">
+          <div class="list-column">
+            <h3>Weekly Mission Rhythm</h3>
+            <ul>
+              <li>
+                <strong>Mission Monday:</strong> short video briefing plus
+                experiment checklist.
+              </li>
+              <li>
+                <strong>Workshop Wednesday:</strong> live Zoom build with
+                facilitators.
+              </li>
+              <li>
+                <strong>Flight Friday:</strong> upload prototypes, receive
+                instant AI feedback.
+              </li>
+              <li>
+                <strong>Family Sunday:</strong> recap newsletter with home
+                challenges.
+              </li>
+            </ul>
           </div>
-          <div class="course-card">
-            <div class="course-image">👥</div>
-            <div class="course-content">
-              <h3>Kids Aerospace Club</h3>
-              <p>
-                Monthly challenges, star badges, and space quiz competitions
-                with certificates.
-              </p>
-              <button class="course-btn">Join Club</button>
-            </div>
+          <div class="list-column">
+            <h3>Parent &amp; Teacher Portal</h3>
+            <ul>
+              <li>Progress dashboard with skills unlocked per learner.</li>
+              <li>
+                Printable certificates and merit letters in multiple languages.
+              </li>
+              <li>
+                Classroom packs with unplugged activities for low-bandwidth
+                schools.
+              </li>
+              <li>
+                Safeguarding center with chat moderation logs and usage alerts.
+              </li>
+            </ul>
           </div>
+        </div>
+
+        <table class="resource-table">
+          <thead>
+            <tr>
+              <th>Track</th>
+              <th>Signature Course</th>
+              <th>Format &amp; Duration</th>
+              <th>Project Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Stargazers</td>
+              <td>Planet Patrol Adventures</td>
+              <td>6-week micro quests, 30 mins/day</td>
+              <td>Personal solar-system diorama with AR narration</td>
+            </tr>
+            <tr>
+              <td>Rocket Coders</td>
+              <td>Code the Sky Bootcamp</td>
+              <td>8 live labs + sandbox play</td>
+              <td>HTML5 rocket game hosted in Nyota Arcade</td>
+            </tr>
+            <tr>
+              <td>Mission Scientists</td>
+              <td>Junior Satellite Studio</td>
+              <td>10 mentor sessions + field assignment</td>
+              <td>Community weather balloon mission brief</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cta-banner">
+          <h3>Ready to enroll an entire classroom or community hub?</h3>
+          <p>
+            We bundle devices, facilitator training, and scholarships so that no
+            curious mind is left out.
+          </p>
+          <button>Book a Nyota Demo Day</button>
         </div>
       </section>
 
       <!-- Sayari Pro Page -->
       <section id="sayari" class="page">
-        <h1>Sayari Pro 🪐 Youth & Professionals Hub</h1>
-        <p>
-          Advanced training and career development for university students,
-          young engineers, and aspiring professionals.
-        </p>
+        <div class="section-intro">
+          <h1>Sayari Pro 🪐 Youth &amp; Professionals Hub</h1>
+          <p>
+            Advanced training, fellowships, and career acceleration for
+            university students, young engineers, and aspiring mission
+            specialists. Sayari Pro bridges the gap between classroom theory and
+            industry-grade flight projects.
+          </p>
+        </div>
 
-        <div class="course-grid">
-          <div class="course-card">
-            <div class="course-image">📖</div>
-            <div class="course-content">
-              <h3>Courses & Training</h3>
-              <p>
-                Beginner to advanced courses in aerospace, satellites, digital
-                twins, and AI for space.
-              </p>
-              <button class="course-btn">View Courses</button>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Certification Tracks</h3>
+            <ul>
+              <li>Satellite Systems &amp; Mission Operations</li>
+              <li>Propulsion &amp; Advanced Manufacturing</li>
+              <li>Space Data Science &amp; AI</li>
+            </ul>
+            <div class="pill-list">
+              <span class="pill">ICOs aligned</span>
+              <span class="pill">Mentor reviews</span>
+              <span class="pill">Capstone showcase</span>
             </div>
-          </div>
-          <div class="course-card">
-            <div class="course-image">🔬</div>
-            <div class="course-content">
-              <h3>Research & Innovation Room</h3>
-              <p>
-                Collaborative digital lab with satellite datasets and AI tools
-                for space research.
-              </p>
-              <button class="course-btn">Enter Lab</button>
+          </article>
+          <article class="detail-card">
+            <h3>Career On-Ramps</h3>
+            <p>
+              Personalized pathways with resume studios, mock interviews, and
+              partner placements.
+            </p>
+            <ul>
+              <li>Tech for Space Bootcamps</li>
+              <li>Launchpad internship roster</li>
+              <li>Founder-in-residence sprints</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Community Chapters</h3>
+            <p>
+              Meet-ups in 14 cities, monthly policy roundtables, and
+              cross-border hackathons.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Peer guilds</span>
+              <span class="pill">Office hours</span>
+              <span class="pill">Demo days</span>
             </div>
+          </article>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card">
+            <h3>Virtual Mission Control 🔭</h3>
+            <ul>
+              <li>
+                Digital twin environment for testing payloads and subsystems.
+              </li>
+              <li>APIs into Sentinel, Landsat, and weather datasets.</li>
+              <li>Automated scoring for fault-response drills.</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Sayari Labs 🔬</h3>
+            <ul>
+              <li>Rapid prototyping kits mailed to fellows.</li>
+              <li>Shared lab time with partner universities.</li>
+              <li>Hardware office hours hosted by industry mentors.</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Masterclass Studio 🎤</h3>
+            <ul>
+              <li>
+                Monthly deep dives with NASA, ESA, SARAO, and SpaceX Africa
+                alumni.
+              </li>
+              <li>Career AMA panels and founder fireside chats.</li>
+              <li>On-demand replay library with study notes.</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Opportunities Exchange 💼</h3>
+            <ul>
+              <li>
+                Scholarships, grants, and mission challenges curated weekly.
+              </li>
+              <li>Automated matching with mentors and hiring partners.</li>
+              <li>Verification badges for portfolio-ready work.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="list-grid">
+          <div class="list-column">
+            <h3>Career Studio</h3>
+            <ul>
+              <li>360° skills assessment with AI-generated growth plan.</li>
+              <li>Interview drills with real engineers and HR partners.</li>
+              <li>Portfolio critique sessions to highlight impact.</li>
+            </ul>
           </div>
-          <div class="course-card">
-            <div class="course-image">🎤</div>
-            <div class="course-content">
-              <h3>Masterclass & Webinars</h3>
-              <p>
-                Monthly sessions with experts from NASA, ESA, SpaceX Africa, and
-                SARAO.
-              </p>
-              <button class="course-btn">See Schedule</button>
-            </div>
+          <div class="list-column">
+            <h3>Global Community</h3>
+            <ul>
+              <li>Slack-style community with topical channels.</li>
+              <li>Peer code reviews &amp; research circles.</li>
+              <li>Regional demo nights streamed live.</li>
+            </ul>
           </div>
-          <div class="course-card">
-            <div class="course-image">💼</div>
-            <div class="course-content">
-              <h3>Opportunities Platform</h3>
-              <p>
-                Internships, scholarships, grants, and space competitions for
-                career advancement.
-              </p>
-              <button class="course-btn">Find Opportunities</button>
-            </div>
-          </div>
+        </div>
+
+        <table class="resource-table">
+          <thead>
+            <tr>
+              <th>Cohort</th>
+              <th>Focus</th>
+              <th>Duration</th>
+              <th>Deliverable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Orbital Systems</td>
+              <td>Attitude control, power budgets, failure trees</td>
+              <td>12 weeks</td>
+              <td>Subsystem design dossier + hardware-in-loop log</td>
+            </tr>
+            <tr>
+              <td>Space Data &amp; AI</td>
+              <td>Geospatial ML, MLOps, anomaly detection</td>
+              <td>10 weeks</td>
+              <td>Satellite analytics pipeline deployed to cloud</td>
+            </tr>
+            <tr>
+              <td>Launch Entrepreneurship</td>
+              <td>Market discovery, policy, venture finance</td>
+              <td>8 weeks</td>
+              <td>Investor-ready pitch + go-to-market roadmap</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cta-banner">
+          <h3>Join the next Sayari Pro cohort.</h3>
+          <p>
+            We offer scholarships, relocation stipends, and placement guarantees
+            with our hiring network.
+          </p>
+          <button>Apply for Sayari Pro</button>
         </div>
       </section>
 
       <!-- Orbit Lady Page -->
       <section id="orbit" class="page">
-        <h1>Orbit Lady 👩🏾‍🚀 Women in Space & STEM</h1>
-        <p>
-          Empowering African women to enter and excel in aerospace through
-          education, mentorship, and career support.
-        </p>
+        <div class="section-intro">
+          <h1>Orbit Lady 👩🏾‍🚀 Women in Space &amp; STEM</h1>
+          <p>
+            Orbit Lady is a leadership, technical, and wellness ecosystem built
+            by African women for African women. We remove barriers to entry,
+            fund bold ideas, and create networks that sustain long-term careers
+            in aerospace and deep-tech.
+          </p>
+        </div>
 
-        <div class="course-grid">
-          <div class="course-card">
-            <div class="course-image">🎓</div>
-            <div class="course-content">
-              <h3>Space4Women Academy</h3>
-              <p>
-                Courses and mentorship focused on leadership, space careers, and
-                overcoming imposter syndrome.
-              </p>
-              <button class="course-btn">Join Academy</button>
+        <div class="stat-grid">
+          <article class="stat-card">
+            <strong>1,000+</strong>
+            <p>Scholarships and fellowships awarded since 2020.</p>
+          </article>
+          <article class="stat-card">
+            <strong>42</strong>
+            <p>Mentorship circles active across the continent.</p>
+          </article>
+          <article class="stat-card">
+            <strong>87%</strong>
+            <p>Graduates placed in aerospace, AI, or research roles.</p>
+          </article>
+        </div>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Space4Women Academy</h3>
+            <p>
+              Leadership and technical curriculum focused on confidence,
+              communication, and engineering skills.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Leadership Labs</span>
+              <span class="pill">Design Studios</span>
+              <span class="pill">Career Retreats</span>
             </div>
-          </div>
-          <div class="course-card">
-            <div class="course-image">🤝</div>
-            <div class="course-content">
-              <h3>Mentorship Circles</h3>
-              <p>
-                One-on-one mentoring, industry guest speakers, and networking
-                sessions.
-              </p>
-              <button class="course-btn">Find a Mentor</button>
+          </article>
+          <article class="detail-card">
+            <h3>Mentorship Constellations</h3>
+            <p>
+              Group mentoring with aerospace veterans, mental health coaches,
+              and policy advocates.
+            </p>
+            <ul>
+              <li>1:1 pairing engine with shared interests.</li>
+              <li>Quarterly accountability sprints.</li>
+              <li>Global mentors dial in across time zones.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Opportunity Desk</h3>
+            <p>
+              Live feed of grants, residencies, missions, and fellowships
+              exclusively for women innovators.
+            </p>
+            <div class="pill-list">
+              <span class="pill">Grant Templates</span>
+              <span class="pill">Recommendation Pools</span>
+              <span class="pill">Flight Readiness Funds</span>
             </div>
+          </article>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card">
+            <h3>Tech Track 🎓</h3>
+            <ul>
+              <li>CubeSat avionics masterclasses.</li>
+              <li>Materials and propulsion deep dives.</li>
+              <li>AI for mission planning crash courses.</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Wellness Track 💚</h3>
+            <ul>
+              <li>Group therapy and resilience coaching.</li>
+              <li>Financial planning workshops.</li>
+              <li>Motherhood and caregiving support pods.</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Policy &amp; Advocacy 🏛️</h3>
+            <ul>
+              <li>Policy brief hackathons with AU Space Agency.</li>
+              <li>Media training and public speaking studio.</li>
+              <li>Delegations to global space summits.</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Spotlight Stories 📖</h3>
+            <ul>
+              <li>Documentary mini-series celebrating African women.</li>
+              <li>Podcast interviews and blog takeovers.</li>
+              <li>Alumna-led masterclasses on lessons learned.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="list-grid">
+          <div class="list-column">
+            <h3>Mentorship Journey</h3>
+            <ul>
+              <li>Orientation + psychological safety workshop.</li>
+              <li>90-day technical sprint with milestone reviews.</li>
+              <li>Public demo + curated introductions to partners.</li>
+            </ul>
           </div>
-          <div class="course-card">
-            <div class="course-image">🌟</div>
-            <div class="course-content">
-              <h3>Opportunities for Women</h3>
-              <p>
-                Scholarships, career programs, and engineering fellowships
-                specifically for women.
-              </p>
-              <button class="course-btn">View Opportunities</button>
-            </div>
+          <div class="list-column">
+            <h3>Support Stack</h3>
+            <ul>
+              <li>Childcare stipends for in-person labs.</li>
+              <li>Travel bursaries for conferences.</li>
+              <li>Emergency micro-grants for prototype costs.</li>
+            </ul>
           </div>
-          <div class="course-card">
-            <div class="course-image">📖</div>
-            <div class="course-content">
-              <h3>Spotlight Stories</h3>
-              <p>
-                Success stories of African women in aerospace, data science, and
-                satellite engineering.
-              </p>
-              <button class="course-btn">Read Stories</button>
-            </div>
-          </div>
+        </div>
+
+        <table class="resource-table">
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Focus</th>
+              <th>Duration</th>
+              <th>Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lumina Fellowship</td>
+              <td>Systems engineering immersion + leadership coaching</td>
+              <td>6 months</td>
+              <td>Paid externship with partner space agency</td>
+            </tr>
+            <tr>
+              <td>Orbit Builders Fund</td>
+              <td>Hardware prototyping stipends</td>
+              <td>4 months</td>
+              <td>Demo-ready prototype + investor roadshow</td>
+            </tr>
+            <tr>
+              <td>Sis In STEM Residency</td>
+              <td>Policy + storytelling residency</td>
+              <td>8 weeks</td>
+              <td>Published policy brief and multimedia feature</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cta-banner">
+          <h3>We fund bold African women building the future of flight.</h3>
+          <p>
+            Apply for Orbit Lady scholarships or invite us to activate your
+            campus chapter.
+          </p>
+          <button>Join Orbit Lady</button>
         </div>
       </section>
 
       <!-- Courses Page -->
       <section id="courses" class="page">
-        <h1>Courses for All Levels</h1>
-        <p>
-          Separated by audience and difficulty level, covering aerospace basics
-          to advanced space technologies.
-        </p>
+        <div class="section-intro">
+          <h1>Courses for All Levels</h1>
+          <p>
+            Curated pathways that cover playful Nyota Junior missions, advanced
+            Sayari Pro certification tracks, and Orbit Lady leadership journeys.
+            Choose a lane or mix-and-match modules to build your personalized
+            stack.
+          </p>
+        </div>
 
         <div class="course-filters">
           <button class="filter-btn active" data-filter="all">
@@ -369,6 +879,9 @@
           <button class="filter-btn" data-filter="kids">Nyota Junior</button>
           <button class="filter-btn" data-filter="pro">Sayari Pro</button>
           <button class="filter-btn" data-filter="women">Orbit Lady</button>
+          <button class="filter-btn" data-filter="research">
+            Research Lab
+          </button>
         </div>
 
         <div class="course-grid">
@@ -383,6 +896,17 @@
               <button class="course-btn">Enroll Now</button>
             </div>
           </div>
+          <div class="course-card" data-category="kids">
+            <div class="course-image">🧪</div>
+            <div class="course-content">
+              <h3>Zero-Gravity Science Lab</h3>
+              <p>
+                Hands-on experiments that translate classroom chemistry and
+                physics into space-friendly formats.
+              </p>
+              <button class="course-btn">Download Kit</button>
+            </div>
+          </div>
           <div class="course-card" data-category="pro">
             <div class="course-image">🛰️</div>
             <div class="course-content">
@@ -394,6 +918,17 @@
               <button class="course-btn">Enroll Now</button>
             </div>
           </div>
+          <div class="course-card" data-category="pro">
+            <div class="course-image">✈️</div>
+            <div class="course-content">
+              <h3>Propulsion &amp; Launch Fundamentals</h3>
+              <p>
+                Learn propulsion physics, engine typologies, and launch campaign
+                planning.
+              </p>
+              <button class="course-btn">View Syllabus</button>
+            </div>
+          </div>
           <div class="course-card" data-category="women">
             <div class="course-image">👩‍💻</div>
             <div class="course-content">
@@ -402,7 +937,28 @@
                 Developing leadership skills and career strategies for women in
                 aerospace.
               </p>
-              <button class="course-btn">Enroll Now</button>
+              <button class="course-btn">Apply</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="women">
+            <div class="course-image">🎙️</div>
+            <div class="course-content">
+              <h3>Policy &amp; Advocacy Studio</h3>
+              <p>
+                Craft policy briefs and media campaigns championing women in
+                STEM.
+              </p>
+              <button class="course-btn">Reserve Seat</button>
+            </div>
+          </div>
+          <div class="course-card" data-category="research">
+            <div class="course-image">🔍</div>
+            <div class="course-content">
+              <h3>Space Data Ops Residency</h3>
+              <p>
+                Live projects using Sentinel, Landsat, and CubeSat datasets.
+              </p>
+              <button class="course-btn">Start Residency</button>
             </div>
           </div>
           <div class="course-card" data-category="pro">
@@ -413,9 +969,109 @@
                 Applying artificial intelligence to satellite data analysis and
                 mission planning.
               </p>
-              <button class="course-btn">Enroll Now</button>
+              <button class="course-btn">Join Sprint</button>
             </div>
           </div>
+        </div>
+
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Learning Formats</h3>
+            <ul>
+              <li>Live cohort-based classes</li>
+              <li>Self-paced nano modules</li>
+              <li>Weekend design sprints</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Assessment Model</h3>
+            <ul>
+              <li>Project rubrics &amp; code reviews</li>
+              <li>Industry mentor feedback</li>
+              <li>Open badge credentials</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Support Layer</h3>
+            <ul>
+              <li>Office hours twice weekly</li>
+              <li>Scholarships &amp; device lending</li>
+              <li>Career concierge services</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card">
+            <h3>Micro-Credential Stack</h3>
+            <ul>
+              <li>Satellite Payload Designer</li>
+              <li>Space Mission Data Analyst</li>
+              <li>STEM Storytelling Facilitator</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Tools &amp; Platforms</h3>
+            <ul>
+              <li>CAD + simulation sandbox</li>
+              <li>Code playground with autograder</li>
+              <li>AI tutor with multilingual prompts</li>
+            </ul>
+          </article>
+          <article class="module-card">
+            <h3>Community Perks</h3>
+            <ul>
+              <li>Project showcase gallery</li>
+              <li>Peer mentorship pods</li>
+              <li>Access to internship board</li>
+            </ul>
+          </article>
+        </div>
+
+        <table class="resource-table">
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Level</th>
+              <th>Start Date</th>
+              <th>Seats</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nyota Arcade Makers</td>
+              <td>Kids / Beginner</td>
+              <td>Jan, Apr, Aug</td>
+              <td>25 per cohort</td>
+            </tr>
+            <tr>
+              <td>Sayari Orbital Systems</td>
+              <td>Professional / Advanced</td>
+              <td>Feb &amp; Sep</td>
+              <td>40 fellows</td>
+            </tr>
+            <tr>
+              <td>Orbit Leadership Residency</td>
+              <td>Women / Intermediate</td>
+              <td>May &amp; Nov</td>
+              <td>30 residents</td>
+            </tr>
+            <tr>
+              <td>Research Lab Practicum</td>
+              <td>Graduate / Expert</td>
+              <td>Rolling</td>
+              <td>Mentor-matched</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cta-banner">
+          <h3>Need a custom learning path for your school or company?</h3>
+          <p>
+            We white-label curricula, train facilitators, and deploy hardware
+            kits within four weeks.
+          </p>
+          <button>Design a Custom Program</button>
         </div>
       </section>
 
@@ -545,14 +1201,24 @@
     <footer>
       <div class="footer-content">
         <div class="footer-links">
-          <a href="#" data-page="home">Home</a>
-          <a href="#" data-page="about">About Us</a>
-          <a href="#" data-page="nyota">Nyota Junior</a>
-          <a href="#" data-page="sayari">Sayari Pro</a>
-          <a href="#" data-page="orbit">Orbit Lady</a>
-          <a href="#" data-page="courses">Courses</a>
-          <a href="#" data-page="research">Research Lab</a>
-          <a href="#" data-page="media">Media Hub</a>
+          <a href="index.html" data-page="home" data-local="true">Home</a>
+          <a href="about.html" data-page="about" data-local="true">About Us</a>
+          <a href="nyota.html" data-page="nyota" data-local="true"
+            >Nyota Junior</a
+          >
+          <a href="sayari.html" data-page="sayari" data-local="true"
+            >Sayari Pro</a
+          >
+          <a href="orbit.html" data-page="orbit" data-local="true"
+            >Orbit Lady</a
+          >
+          <a href="courses.html" data-page="courses" data-local="true"
+            >Courses</a
+          >
+          <a href="research.html" data-page="research" data-local="true"
+            >Research Lab</a
+          >
+          <a href="media.html" data-page="media" data-local="true">Media Hub</a>
           <a href="#">Get Involved</a>
           <a href="#">Contact</a>
         </div>

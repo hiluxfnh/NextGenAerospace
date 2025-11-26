@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Hub | NextGen Aerospace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-current-page="media">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-img">NG</div>
+        <div class="logo-text">NextGen Aerospace</div>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="index.html"
+              class="nav-link"
+              data-page="home"
+              data-local="true"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="nav-link"
+              data-page="about"
+              data-local="true"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="nyota.html"
+              class="nav-link"
+              data-page="nyota"
+              data-local="true"
+              >Nyota Junior</a
+            >
+          </li>
+          <li>
+            <a
+              href="sayari.html"
+              class="nav-link"
+              data-page="sayari"
+              data-local="true"
+              >Sayari Pro</a
+            >
+          </li>
+          <li>
+            <a
+              href="orbit.html"
+              class="nav-link"
+              data-page="orbit"
+              data-local="true"
+              >Orbit Lady</a
+            >
+          </li>
+          <li>
+            <a
+              href="courses.html"
+              class="nav-link"
+              data-page="courses"
+              data-local="true"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a
+              href="research.html"
+              class="nav-link"
+              data-page="research"
+              data-local="true"
+              >Research Lab</a
+            >
+          </li>
+          <li>
+            <a
+              href="media.html"
+              class="nav-link"
+              data-page="media"
+              data-local="true"
+              >Media Hub</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="sw">SW</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </header>
+    <!-- Accessibility Dock -->
+    <section class="accessibility-dock" aria-label="Accessibility controls">
+      <div class="dock-info">
+        <strong>Accessibility tools</strong>
+        <p>Adjust text size, toggle visual modes, or listen to any page without leaving the site.</p>
+      </div>
+      <div class="dock-groups">
+        <div class="dock-group">
+          <span class="dock-label">Text size</span>
+          <div class="font-controls" id="font-controls">
+            <button class="font-btn" data-size="small" aria-label="Reduce text size">A-</button>
+            <button class="font-btn" data-size="normal" aria-label="Reset text size">A</button>
+            <button class="font-btn" data-size="large" aria-label="Increase text size">A+</button>
+          </div>
+        </div>
+        <div class="dock-group">
+          <span class="dock-label">Visual &amp; audio</span>
+          <div class="dock-buttons">
+            <button
+              class="accessibility-btn"
+              id="contrast-btn"
+              title="High Contrast Mode"
+            >
+              Contrast
+            </button>
+            <button
+              class="accessibility-btn"
+              id="dyslexia-btn"
+              title="Dyslexia-Friendly Font"
+            >
+              Dyslexia
+            </button>
+            <button class="accessibility-btn" id="tts-btn" title="Text-to-Speech">
+              Listen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Media Section -->
+      <section id="media" class="page active">
+        <h1>Anga Media Hub</h1>
+        <p>
+          Your content powerhouse for articles, blogs, news, documentaries, and
+          space career stories.
+        </p>
+
+        <div class="content-grid">
+          <div class="content-card">
+            <h3>Latest Articles</h3>
+            <ul>
+              <li>African Space Agencies: The Next Frontier</li>
+              <li>How AI is Revolutionizing Satellite Data Analysis</li>
+              <li>Women Breaking Barriers in African Aerospace</li>
+            </ul>
+            <button class="course-btn">Read More</button>
+          </div>
+          <div class="content-card">
+            <h3>Blog Updates</h3>
+            <ul>
+              <li>Founder's Vision: Space Education for All</li>
+              <li>Nyota Junior Success Stories</li>
+              <li>Upcoming Events and Webinars</li>
+            </ul>
+            <button class="course-btn">Read Blog</button>
+          </div>
+          <div class="content-card">
+            <h3>News &amp; Updates</h3>
+            <ul>
+              <li>African Union Space Policy Developments</li>
+              <li>NextGen Partners with International Space Agencies</li>
+              <li>Student Satellite Projects Across Africa</li>
+            </ul>
+            <button class="course-btn">View News</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant">
+      <div class="ai-chat" id="ai-chat">
+        <div class="chat-header">
+          <span>Ask NextGen Assistant</span>
+          <button id="close-chat">X</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+          <div class="chat-message ai-message">
+            Hello! I'm your NextGen AI assistant. How can I help you today?
+          </div>
+        </div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your question..."
+          />
+          <button id="send-message">Send</button>
+        </div>
+      </div>
+      <div class="ai-bubble" id="ai-bubble">
+        <span>🤖</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="index.html" data-page="home" data-local="true">Home</a>
+          <a href="about.html" data-page="about" data-local="true">About Us</a>
+          <a href="nyota.html" data-page="nyota" data-local="true"
+            >Nyota Junior</a
+          >
+          <a href="sayari.html" data-page="sayari" data-local="true"
+            >Sayari Pro</a
+          >
+          <a href="orbit.html" data-page="orbit" data-local="true"
+            >Orbit Lady</a
+          >
+          <a href="courses.html" data-page="courses" data-local="true"
+            >Courses</a
+          >
+          <a href="research.html" data-page="research" data-local="true"
+            >Research Lab</a
+          >
+          <a href="media.html" data-page="media" data-local="true">Media Hub</a>
+          <a href="#">Get Involved</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="language-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="sw">SW</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <p>&copy; 2023 NextGen Aerospace Technologies. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

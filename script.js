@@ -2,8 +2,6 @@
 const navLinks = document.querySelectorAll(".nav-link");
 const pages = document.querySelectorAll(".page");
 const langButtons = document.querySelectorAll(".lang-btn");
-const fontControlBtn = document.getElementById("font-control-btn");
-const fontControls = document.getElementById("font-controls");
 const fontButtons = document.querySelectorAll(".font-btn");
 const contrastBtn = document.getElementById("contrast-btn");
 const dyslexiaBtn = document.getElementById("dyslexia-btn");
@@ -15,30 +13,44 @@ const chatBody = document.getElementById("chat-body");
 const chatInput = document.getElementById("chat-input");
 const sendMessage = document.getElementById("send-message");
 const highlightCards = document.querySelectorAll(".highlight-card");
-const counterNumbers = document.querySelectorAll(".counter-number");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const courseCards = document.querySelectorAll(".course-card[data-category]");
+const bodyCurrentPage = document.body?.dataset?.currentPage;
+
+const setActiveNav = (pageId) => {
+  navLinks.forEach((nav) => {
+    nav.classList.toggle("active", nav.getAttribute("data-page") === pageId);
+  });
+};
+
+const showPage = (targetPage, shouldScroll = true) => {
+  if (!targetPage) return false;
+  const targetElement = document.getElementById(targetPage);
+  if (!targetElement) return false;
+
+  pages.forEach((page) => page.classList.remove("active"));
+  targetElement.classList.add("active");
+  if (shouldScroll) {
+    window.scrollTo(0, 0);
+  }
+  setActiveNav(targetPage);
+  return true;
+};
+
+if (bodyCurrentPage) {
+  setActiveNav(bodyCurrentPage);
+  showPage(bodyCurrentPage, false);
+}
 
 // Navigation
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
     const targetPage = link.getAttribute("data-page");
+    const prefersLocal = link.getAttribute("data-local") === "true";
 
-    // Update active nav link
-    navLinks.forEach((nav) => nav.classList.remove("active"));
-    link.classList.add("active");
-
-    // Show target page
-    pages.forEach((page) => {
-      page.classList.remove("active");
-      if (page.id === targetPage) {
-        page.classList.add("active");
-      }
-    });
-
-    // Scroll to top
-    window.scrollTo(0, 0);
+    if (prefersLocal && showPage(targetPage)) {
+      e.preventDefault();
+    }
   });
 });
 
@@ -46,25 +58,9 @@ navLinks.forEach((link) => {
 highlightCards.forEach((card) => {
   card.addEventListener("click", () => {
     const targetPage = card.getAttribute("data-page");
-
-    // Update active nav link
-    navLinks.forEach((nav) => {
-      nav.classList.remove("active");
-      if (nav.getAttribute("data-page") === targetPage) {
-        nav.classList.add("active");
-      }
-    });
-
-    // Show target page
-    pages.forEach((page) => {
-      page.classList.remove("active");
-      if (page.id === targetPage) {
-        page.classList.add("active");
-      }
-    });
-
-    // Scroll to top
-    window.scrollTo(0, 0);
+    if (!showPage(targetPage)) {
+      window.location.href = `${targetPage}.html`;
+    }
   });
 });
 
@@ -79,11 +75,6 @@ langButtons.forEach((button) => {
       `Language switched to ${button.textContent}. In a full implementation, all text would be translated.`
     );
   });
-});
-
-// Font Controls
-fontControlBtn.addEventListener("click", () => {
-  fontControls.classList.toggle("active");
 });
 
 fontButtons.forEach((button) => {
@@ -108,28 +99,28 @@ fontButtons.forEach((button) => {
 });
 
 // High Contrast Mode
-contrastBtn.addEventListener("click", () => {
-  document.body.classList.toggle("high-contrast");
-  contrastBtn.textContent = document.body.classList.contains("high-contrast")
-    ? "C✓"
-    : "C";
-});
+if (contrastBtn) {
+  contrastBtn.addEventListener("click", () => {
+    const isActive = document.body.classList.toggle("high-contrast");
+    contrastBtn.textContent = isActive ? "Contrast ✓" : "Contrast";
+    contrastBtn.setAttribute("aria-pressed", isActive);
+  });
+}
 
 // Dyslexia-Friendly Mode
-dyslexiaBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dyslexia-friendly");
-  dyslexiaBtn.textContent = document.body.classList.contains(
-    "dyslexia-friendly"
-  )
-    ? "D✓"
-    : "D";
-});
+if (dyslexiaBtn) {
+  dyslexiaBtn.addEventListener("click", () => {
+    const isActive = document.body.classList.toggle("dyslexia-friendly");
+    dyslexiaBtn.textContent = isActive ? "Dyslexia ✓" : "Dyslexia";
+    dyslexiaBtn.setAttribute("aria-pressed", isActive);
+  });
+}
 
 // Text-to-Speech
 let ttsActive = false;
 let ttsUtterance = null;
 
-ttsBtn.addEventListener("click", () => {
+ttsBtn?.addEventListener("click", () => {
   if (!ttsActive) {
     // Get current page content
     const activePage = document.querySelector(".page.active");
@@ -145,11 +136,13 @@ ttsBtn.addEventListener("click", () => {
       ttsUtterance = new SpeechSynthesisUtterance(textToRead);
       window.speechSynthesis.speak(ttsUtterance);
       ttsBtn.classList.add("tts-active");
+      ttsBtn.setAttribute("aria-pressed", "true");
       ttsActive = true;
 
       // Reset when speech ends
       ttsUtterance.onend = () => {
         ttsBtn.classList.remove("tts-active");
+        ttsBtn.setAttribute("aria-pressed", "false");
         ttsActive = false;
       };
     } else {
@@ -159,6 +152,7 @@ ttsBtn.addEventListener("click", () => {
     // Stop speech
     window.speechSynthesis.cancel();
     ttsBtn.classList.remove("tts-active");
+    ttsBtn.setAttribute("aria-pressed", "false");
     ttsActive = false;
   }
 });
@@ -238,29 +232,6 @@ function sendUserMessage() {
   }
 }
 
-// Animated Counter
-function animateCounter(element, target) {
-  let current = 0;
-  const increment = target / 100;
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      clearInterval(timer);
-      current = target;
-    }
-    element.textContent = Math.floor(current).toLocaleString();
-  }, 20);
-}
-
-// Initialize counters when page loads
-window.addEventListener("load", () => {
-  animateCounter(document.getElementById("kids-counter"), 12500);
-  animateCounter(document.getElementById("courses-counter"), 47);
-  animateCounter(document.getElementById("women-counter"), 3200);
-  animateCounter(document.getElementById("countries-counter"), 18);
-  animateCounter(document.getElementById("community-counter"), 28500);
-});
-
 // Course Filtering
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -285,28 +256,9 @@ filterButtons.forEach((button) => {
 const footerLinks = document.querySelectorAll(".footer-links a");
 footerLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
     const targetPage = link.getAttribute("data-page");
-
-    if (targetPage) {
-      // Update active nav link
-      navLinks.forEach((nav) => {
-        nav.classList.remove("active");
-        if (nav.getAttribute("data-page") === targetPage) {
-          nav.classList.add("active");
-        }
-      });
-
-      // Show target page
-      pages.forEach((page) => {
-        page.classList.remove("active");
-        if (page.id === targetPage) {
-          page.classList.add("active");
-        }
-      });
-
-      // Scroll to top
-      window.scrollTo(0, 0);
+    if (targetPage && showPage(targetPage)) {
+      e.preventDefault();
     }
   });
 });
